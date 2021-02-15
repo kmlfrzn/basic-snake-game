@@ -1,4 +1,11 @@
+// GLOBALS
+// DON'T CHANGE!
+
 const GRID_SIZE = 21;
+
+//  --- CONTENT ---  //
+
+// GET RANDOM GRID POSITION
 
 export function randomGridPosition() {
   return {
@@ -6,6 +13,8 @@ export function randomGridPosition() {
     y: Math.floor(Math.random() * GRID_SIZE) + 1,
   };
 }
+
+// CHECK IF OUTSIDE GRID
 
 export function outsideGrid(position) {
   return (

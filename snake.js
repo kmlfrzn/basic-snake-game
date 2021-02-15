@@ -1,8 +1,24 @@
-import { getInputDirection } from "./input.js";
+// GLOBALS
+// This is a changable variable.
+// ~~ Fiddle with this to change the Expansion Rate on eating one food instance. ~~
 
 export const SNAKE_SPEED = 5;
+
+// ~~ This is signifies the position of the starting point. Set to be in the middle. ~~
+
 const snakeBody = [{ x: 11, y: 11 }];
+
+// IMPORTS
+
+import { getInputDirection } from "./input.js";
+
+// VARIABLES
+
 let newSegments = 0;
+
+//  --- CONTENT ---  //
+
+// UPDATE FUNCTION
 
 export function update() {
   addSegments();
@@ -16,6 +32,8 @@ export function update() {
   snakeBody[0].y += inputDirection.y;
 }
 
+// DRAW FUNCTION
+
 export function draw(gameBoard) {
   snakeBody.forEach((segment) => {
     const snakeElement = document.createElement("div");
@@ -28,9 +46,13 @@ export function draw(gameBoard) {
   });
 }
 
+// ADD EXTRA BODY SIZE
+
 export function expandSnake(amount) {
   newSegments += amount;
 }
+
+// CHECK SNAKE'S POSITION
 
 export function onSnake(position, { ignoreHead = false } = {}) {
   return snakeBody.some((segment, index) => {
@@ -39,17 +61,25 @@ export function onSnake(position, { ignoreHead = false } = {}) {
   });
 }
 
+// GET SNAKE HEAD
+
 export function getSnakeHead() {
   return snakeBody[0];
 }
+
+// CHECK FOR INTERSECTION THRU onSnake()
 
 export function snakeIntersection() {
   return onSnake(snakeBody[0], { ignoreHead: true });
 }
 
+// EQUAL POSITIONS
+
 function equalPositions(pos1, pos2) {
   return pos1.x === pos2.x && pos1.y === pos2.y;
 }
+
+// EXTRA SEGMENTS
 
 function addSegments() {
   for (let i = 0; i < newSegments; i++) {

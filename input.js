@@ -1,5 +1,11 @@
+// VARIABLES
+
 let inputDirection = { x: 0, y: 0 };
 let lastInputDirection = { x: 0, y: 0 };
+
+// --- CONTENT --- //
+
+// INPUT HANDLER
 
 window.addEventListener("keydown", (e) => {
   switch (e.key) {
@@ -21,6 +27,8 @@ window.addEventListener("keydown", (e) => {
       break;
   }
 });
+
+// CHANGE DIRECTION WITH INPUT
 
 export function getInputDirection() {
   lastInputDirection = inputDirection;

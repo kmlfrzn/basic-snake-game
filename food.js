@@ -1,8 +1,22 @@
+// GLOBALS
+
+// This is a changable variable.
+// ~~ Fiddle with this to change the Expansion Rate on eating one food instance. ~~
+
+const EXPANSION_RATE = 5;
+
+// IMPORTS
+
 import { onSnake, expandSnake } from "./snake.js";
 import { randomGridPosition } from "./grid.js";
 
+// VARIABLES
+
 let food = getRandomFoodPosition();
-const EXPANSION_RATE = 5;
+
+//  --- CONTENT ---  //
+
+// UPDATE FUNCTION
 
 export function update() {
   if (onSnake(food)) {
@@ -10,6 +24,8 @@ export function update() {
     food = getRandomFoodPosition();
   }
 }
+
+// DRAW FUNCTION
 
 export function draw(gameBoard) {
   const foodElement = document.createElement("div");
@@ -20,6 +36,8 @@ export function draw(gameBoard) {
   foodElement.classList.add("food");
   gameBoard.appendChild(foodElement);
 }
+
+// GET RANDOM FOOD POSITION
 
 function getRandomFoodPosition() {
   let newFoodPosition;

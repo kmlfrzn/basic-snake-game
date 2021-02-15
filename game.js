@@ -1,3 +1,9 @@
+// GAME BOARD
+
+const GAME_BOARD = document.getElementById("game-board");
+
+// IMPORTS
+
 import {
   update as updateSnake,
   draw as drawSnake,
@@ -5,19 +11,22 @@ import {
   getSnakeHead,
   snakeIntersection,
 } from "./snake.js";
-
 import { update as updateFood, draw as drawFood } from "./food.js";
-
 import { outsideGrid } from "./grid.js";
+
+// VARIABLES
 
 let lastRenderTime = 0;
 let gameOver = false;
-const gameBoard = document.getElementById("game-board");
+
+//  --- CONTENT ---  //
+
+// GAME LOOP
 
 function main(currentTime) {
   if (gameOver) {
     if (confirm("You Lost! Press OK to Restart!")) {
-      window.location = "/";
+      location.reload();
     }
     return;
   }
@@ -31,8 +40,9 @@ function main(currentTime) {
   update();
   draw();
 }
-
 window.requestAnimationFrame(main);
+
+// UPDATE FUNCTION
 
 function update() {
   updateSnake();
@@ -40,11 +50,15 @@ function update() {
   checkDeath();
 }
 
+// DRAW FUNCTION
+
 function draw() {
-  gameBoard.innerHTML = "";
-  drawSnake(gameBoard);
-  drawFood(gameBoard);
+  GAME_BOARD.innerHTML = "";
+  drawSnake(GAME_BOARD);
+  drawFood(GAME_BOARD);
 }
+
+// CHECK FOR DEATH
 
 function checkDeath() {
   gameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
