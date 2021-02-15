@@ -55,7 +55,7 @@ export function draw(gameBoard) {
 export function expandSnake(amount) {
   newSegments += amount;
   score++;
-  scoreBoard.textContent = score;
+  scoreBoard.textContent = `Score: ${score}`;
 }
 
 // CHECK SNAKE'S POSITION

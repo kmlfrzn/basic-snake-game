@@ -17,11 +17,15 @@ body {
 #score {
   position: absolute;
   top: 1%;
-  right: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 
   font-family: sans-serif;
   font-size: 2rem;
 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   z-index: 100;
 }
 
@@ -31,8 +35,8 @@ body {
   width: 100vmin;
   height: 100vmin;
   display: grid;
-  grid-template-rows: repeat(21, 1fr);
-  grid-template-columns: repeat(21, 1fr);
+  grid-template-rows: repeat(22, 1fr);
+  grid-template-columns: repeat(22, 1fr);
 }
 
 .snake {
