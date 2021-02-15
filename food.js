@@ -3,7 +3,7 @@
 // This is a changable variable.
 // ~~ Fiddle with this to change the Expansion Rate on eating one food instance. ~~
 
-const EXPANSION_RATE = 5;
+const EXPANSION_RATE = 1;
 
 // IMPORTS
 
