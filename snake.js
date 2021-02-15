@@ -1,8 +1,11 @@
 // GLOBALS
+
+const scoreBoard = document.getElementById("score");
+
 // This is a changable variable.
 // ~~ Fiddle with this to change the Expansion Rate on eating one food instance. ~~
 
-export const SNAKE_SPEED = 5;
+export const SNAKE_SPEED = 3;
 
 // ~~ This is signifies the position of the starting point. Set to be in the middle. ~~
 
@@ -15,6 +18,7 @@ import { getInputDirection } from "./input.js";
 // VARIABLES
 
 let newSegments = 0;
+var score = 0;
 
 //  --- CONTENT ---  //
 
@@ -50,6 +54,8 @@ export function draw(gameBoard) {
 
 export function expandSnake(amount) {
   newSegments += amount;
+  score++;
+  scoreBoard.textContent = score;
 }
 
 // CHECK SNAKE'S POSITION

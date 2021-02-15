@@ -23,6 +23,8 @@ let gameOver = false;
 
 // GAME LOOP
 
+console.log("Console Moment");
+
 function main(currentTime) {
   if (gameOver) {
     if (confirm("You Lost! Press OK to Restart!")) {
