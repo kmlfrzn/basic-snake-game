@@ -37,6 +37,7 @@ body {
   display: grid;
   grid-template-rows: repeat(22, 1fr);
   grid-template-columns: repeat(22, 1fr);
+  transition: 500ms ease-in-out;
 }
 
 .snake {
