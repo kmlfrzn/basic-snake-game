@@ -41,6 +41,7 @@ body {
 }
 
 .snake {
+transition: 500ms ease-in-out;
   background-color: hsl(200, 100%, 50%);
   border: 0.25vmin solid black;
 }
